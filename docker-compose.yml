@@ -1,0 +1,14 @@
+﻿version: '3.9'
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: database
+    container_name: database
+    volumes:
+      - ./_database:/var/opt/mssql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123.
+    ports:
+      - "11433:1433"
