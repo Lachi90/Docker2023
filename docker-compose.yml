@@ -12,3 +12,25 @@ services:
       - SA_PASSWORD=Password123.
     ports:
       - "11433:1433"
+  backend:
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "10080:80"
+  frontend:
+    image: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "3000:80"
