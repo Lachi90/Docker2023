@@ -19,6 +19,10 @@ builder.Services.AddTransient<IBookService, BookService>();
 
 var app = builder.Build();
 
+using var scope = app.Services.CreateScope();
+await using var dbContext = scope.ServiceProvider.GetRequiredService<ExampleContext>();
+await dbContext.Database.MigrateAsync();
+
 // Configure the HTTP request pipeline.
 app.UseSwagger();
 app.UseSwaggerUI();
