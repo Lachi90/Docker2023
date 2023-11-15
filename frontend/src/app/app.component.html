@@ -2,23 +2,23 @@
   <h2>Add a Book</h2>
   <form (ngSubmit)="addBook()" class="mb-4">
     <div class="form-group">
-      <label for="name">Title:</label>
-      <input type="text" id="name" [(ngModel)]="newBook.title" class="form-control" required>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="newBook.title" class="form-control" required>
     </div>
 
     <div class="form-group">
       <label for="author">Author:</label>
-      <input type="text" id="author" [(ngModel)]="newBook.author" class="form-control" required>
+      <input type="text" id="author" name="author" [(ngModel)]="newBook.author" class="form-control" required>
     </div>
 
     <div class="form-group">
       <label for="year">Year:</label>
-      <input type="number" id="year" [(ngModel)]="newBook.year" class="form-control" required>
+      <input type="number" id="year" name="year" [(ngModel)]="newBook.year" class="form-control" required>
     </div>
 
     <div class="form-group">
       <label for="isbn">ISBN:</label>
-      <input type="text" id="isbn" [(ngModel)]="newBook.isbn" class="form-control" required>
+      <input type="text" id="isbn" name="isbn" [(ngModel)]="newBook.isbn" class="form-control" required>
     </div>
 
     <button type="submit" class="mt-4 btn btn-primary">Add Book</button>
