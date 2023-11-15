@@ -13,7 +13,7 @@ public class BookController : ControllerBase
         _bookService = bookService;
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     public async Task<IActionResult> CreateBookAsync([FromBody] Book book)
     {
         var createdBook = await _bookService.CreateBookAsync(book);
@@ -27,7 +27,7 @@ public class BookController : ControllerBase
         return Ok(book);
     }
 
-    [HttpPut]
+    [HttpPut("Update")]
     public async Task<IActionResult> UpdateBookAsync([FromBody] Book book)
     {
         var updatedBook = await _bookService.UpdateBookAsync(book);
