@@ -41,7 +41,7 @@ public class BookController : ControllerBase
         return Ok();
     }
 
-    [HttpGet]
+    [HttpGet("Books")]
     public async Task<IActionResult> GetBooksAsync()
     {
         var books = await _bookService.GetBooksAsync();
