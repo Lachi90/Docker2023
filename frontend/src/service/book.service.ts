@@ -29,6 +29,6 @@ export class BookService {
     }
 
     deleteBook(id: number) {
-        return this.httpClient.delete(`${this.backendUrl}/delete/${id}`);
+        return this.httpClient.delete(`${this.backendUrl}/${id}`);
     }
 }
